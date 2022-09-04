@@ -1,0 +1,56 @@
+[
+    {
+    "id": 1,
+    "partName": "Clutch and brake yokes",
+    "price": "300",
+    "minOrder": "200",
+    "available": "2000",
+    "description": "A clutch and brake yoke is a device in which the clutch and brake handles are inserted. These yokes are attached to the handlebar of the Bike / Scooter.",
+    "img": "https://i.ibb.co/rt4jkJj/clutch-and-brake-yokes-250x250.jpg"
+},
+{
+    "id": 2,
+    "partName": "Hero bike small roller",
+    "price": "100",
+    "minOrder": "200",
+    "available": "2000",
+    "description": "Timing rollers are manufactured from high quality material and advanced technology.the fitment of the products is as per oe specification.",
+    "img": "https://i.ibb.co/3BvqxKy/exhaust-250x250.jpg"
+},
+{
+    "id": 3,
+    "partName": "Exhaust",
+    "price": "150",
+    "minOrder": "200",
+    "available": "2000",
+    "description": "An exhaust system is used to guide reaction exhaust gases away from a controlled combustion inside an engine or stove.",
+    "img": "https://i.ibb.co/g6Vf7YR/hero-bike-small-roller-250x250.jpg"
+},
+{
+    "id": 4,
+    "partName": "Hero deluxe eco motorcycle",
+    "price": "180",
+    "minOrder": "200",
+    "available": "2000",
+    "description": "It gets enhanced wing mirrors and low profile rolling resistance tyres. ",
+    "img": "https://i.ibb.co/hC5T8Fp/hero-deluxe-eco-motorcycle-parts-250x250.png"
+},
+{
+    "id": 5,
+    "partName": "Light",
+    "price": "100",
+    "minOrder": "200",
+    "available": "2000",
+    "description": "Backed by rich industry experience and market understanding, we are involved in offering a wide array of Bike Tail Light to our valued patrons.",
+    "img": "https://i.ibb.co/0BLMjMG/img-20191222-wa0037-250x250.jpg"
+},
+{
+    "id": 6,
+    "partName": "Yamaha fnc shaft kgt",
+    "price": "300",
+    "minOrder": "200",
+    "available": "2000",
+    "description": "KW3-M1131-00X BRKT., REG. KH5-M8501-00X EXHAUST VALVEKW3-M1134-01X BRKT. KH5-M8531-00X FITTING 1K44-M1354-00X MG.040M12AJ1-KG7-M8512-00X",
+    "img": "https://i.ibb.co/zV2skhq/yamaha-fnc-shaft-kgt-m711s-a0x-250x250.png"
+}
+]
