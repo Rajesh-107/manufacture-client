@@ -37,7 +37,7 @@ const Banner = () => {
               style={{ backgroundPosition: "50%" }}
             >
               <img
-                src="https://mdbootstrap.com/img/Photos/Slides/img%20(123).jpg"
+                src="https://images.unsplash.com/photo-1477168561719-12b71b09935b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1032&q=80"
                 class="block w-full"
               />
               <div class="absolute top-0 right-0 bottom-0 left-0 w-full  overflow-hidden bg-fixed bg-black opacity-50"></div>
