@@ -8,6 +8,7 @@ import { useForm } from "react-hook-form";
 import Loading from "../Shared/Loading";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { signInWithEmailAndPassword } from "firebase/auth";
+import useToken from "../hooks/useToken";
 
 const Login = () => {
   const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
@@ -24,12 +25,13 @@ const Login = () => {
   const navigate = useNavigate();
   const location = useLocation();
   let from = location.state?.from?.pathname || "/";
+  const [token] = useToken(user||gUser)
 
-  //   useEffect(() => {
-  //     if (token) {
-  //       navigate(from, { replace: true });
-  //     }
-  //   }, [token, from, navigate]);
+    useEffect(() => {
+      if (token) {
+        navigate(from, { replace: true });
+      }
+    }, [token, from, navigate]);
 
   if (loading || gLoading) {
     return <Loading></Loading>;
@@ -130,7 +132,7 @@ const Login = () => {
             </form>
             <p>
               New here?
-              <Link className="text-primary p-2" to="signup">
+              <Link className="text-primary p-2" to="/signup">
                 Create New Account
               </Link>
             </p>

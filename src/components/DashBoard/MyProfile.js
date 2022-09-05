@@ -27,7 +27,7 @@ const MyProfile = () => {
     };
 
     if (user.email) {
-      fetch(`https://localhost:5000/user/${user.email}`, {
+      fetch(`http://localhost:5000/user/${user.email}`, {
         method: "PUT",
         headers: {
           "content-type": "application/json",
@@ -49,24 +49,25 @@ const MyProfile = () => {
           <img src={dbUser.photo || userPhoto} alt="" class="rounded-full w-44" />
         </figure>
 
-        <div className="text-left ml-8 text-lg  mt-8">
+        <div className="text-left ml-8 text-lg mt-8">
           <h3>
             {" "}
-            <span className="font-bold ">Name:</span> {user.displayName}
+            <span className="font-bold text-indigo-500">Name:</span> {user.displayName}
           </h3>
           <h3>
             {" "}
-            <span className="font-bold ">Email:</span> {user.email}
+            <span className="font-bold text-indigo-500">Email:</span> {user.email}
           </h3>
         </div>
       </div>
       <form className="w-full" onSubmit={handleProfileUpdate}>
         <div class="card-body my-0 gap-y-0 items-center text-center">
-          <h2 class="card-title  text-3xl mb-5 pb-2">Update Your Profile</h2>
-          <hr />
+          <h2 class="card-title text-indigo-500 text-3xl mb-5 pb-2">Update Your Profile</h2>
+          <div className="h-1 w-72 bg-indigo-500 rounded"></div>
+      
           <div class="form-control w-full max-w-xs">
             <label class="label">
-              <span class="label-text">Add your education</span>
+              <span class="label-text">Education</span>
             </label>
             <input
               type="text"
@@ -120,7 +121,7 @@ const MyProfile = () => {
             />
           </div>
           <div class="card-actions mt-5">
-            <button type="submit" class="btn btn-outline">
+            <button type="submit" class="btn btn-wide">
               Update
             </button>
           </div>

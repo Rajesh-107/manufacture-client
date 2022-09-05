@@ -8,7 +8,7 @@ const PartsDetail = () => {
   const { id } = useParams();
   const [inventory, setInventory] = useState({});
   const [update, setUpdate] = useState({});
-  const [quantity, setQuantity] = useState(5);
+  const [quantity, setQuantity] = useState(200);
   const [user] = useAuthState(auth);
 
   useEffect(() => {

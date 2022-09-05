@@ -16,6 +16,7 @@ import NotFound from './components/Shared/NotFound';
 import MyOrders from './components/DashBoard/MyOrders';
 import MyReview from './components/DashBoard/MyReview';
 import MyProfile from './components/DashBoard/MyProfile';
+import Users from './components/DashBoard/Users';
 
 function App() {
   return (
@@ -35,6 +36,7 @@ function App() {
           <Route index element={<MyProfile></MyProfile>}></Route>
           <Route path='myorder' element={<MyOrders></MyOrders>}></Route>
           <Route path='review' element={<MyReview></MyReview>}></Route>
+          <Route path='users' element={<Users></Users>}></Route>
         </Route>
         
         <Route path='*' element={<NotFound></NotFound>}></Route>

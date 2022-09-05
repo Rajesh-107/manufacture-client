@@ -3,7 +3,7 @@ import { useAuthState } from "react-firebase-hooks/auth";
 import { Link, useNavigate } from "react-router-dom";
 import auth from "../../firebase.init";
 import useDBUser from "../hooks/dbUser";
-import useSinglePart from "../hooks/useSinglePart";
+
 
 const Bikepart = ({ part }) => {
   const [user] = useAuthState(auth);
