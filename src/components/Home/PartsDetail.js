@@ -36,16 +36,18 @@ const PartsDetail = () => {
 
   const handlePlaceOrder = (event) => {
     event.preventDefault();
+    const price = parseFloat(inventory.price);
     const order = {
       name: user.displayName,
       email: user.email,
       product: inventory.partName,
       img: inventory.img,
-      price: inventory.price,
+      price: parseFloat(inventory.price),
       productId: id,
       quantity: event.target.quantity.value,
       address: event.target.address.value,
       phone: event.target.phone.value,
+      totalPrice: parseFloat(price*quantity),
     };
     fetch("http://localhost:5000/order", {
       method: "POST",

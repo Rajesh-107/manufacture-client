@@ -5,16 +5,16 @@ const Dashboard = () => {
     return (
         <div class="drawer drawer-mobile">
         <input id="dashboard-sidebar" type="checkbox" class="drawer-toggle" />
-        <div class="drawer-content ">
+        <div class="drawer-content py-5 px-4">
             <h2>Welcome to the dashboard</h2>
           {/* <!-- Page content here --> */}
           <Outlet/>
           
         
         </div> 
-        <div class="drawer-side">
+        <div class="drawer-side ">
           <label for="dashboard-sidebar" class="drawer-overlay"></label> 
-          <ul class="menu p-4 overflow-y-auto w-80 bg-base-100 text-base-content">
+          <ul class="menu p-4 overflow-y-auto w-56 bg-base-200 text-base-content">
             {/* <!-- Sidebar content here --> */}
             <li><Link  to='/dashboard'> My Profile</Link></li>
             <li><Link to='/dashboard/myorder'>My Order</Link></li>

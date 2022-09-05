@@ -13,10 +13,12 @@ const MyOrders = () => {
         .then((res) => res.json())
         .then((data) => setOrders(data));
     }
-  }, []);
+  }, [user]);
+
+ 
 
   const handleCancelOrder = (id) => {
-    const url = `https://http://localhost:5000/order/${id}`;
+    const url = `http://localhost:5000/order/${id}`;
 
     fetch(url, {
       method: "DELETE",
@@ -42,56 +44,68 @@ const MyOrders = () => {
                 #
               </th>
               <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
-                First
+                Images
               </th>
               <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
-                Last
+                Name
               </th>
               <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
-                Handle
+                Price
               </th>
               <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
-                Handle
+                Quantity
+              </th>
+              <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
+              Total Price 
+              </th>
+              <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
+                 Status
+              </th>
+              <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
+                Action
+              </th>
+              <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
+                Payment
               </th>
             </tr>
           </thead>
           <tbody>
-            <tr class="border-b">
-              <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">1</td>
+            {
+              orders.map((order, index) => <tr key={order._id} class="border-b">
+              <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">{index +1 }</td>
+             
               <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                Mark
+              <div class="avatar">
+                  <div class="w-20 rounded-full">
+                    <img src={order.img} alt='' />
+                  </div>
+                </div>
+             
               </td>
-              <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                Otto
+              <td class="text-sm text-gray-900 font-bold px-6 py-4 whitespace-nowrap">
+               {order.product}
+             
               </td>
-              <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                @mdo
+              <td class="text-sm text-gray-900 font-bold px-6 py-4 whitespace-nowrap">
+              {order.price}
               </td>
-            </tr>
-            <tr class="bg-white border-b">
-              <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">2</td>
-              <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                Jacob
+              <td class="text-sm text-gray-900 font-bold px-6 py-4 whitespace-nowrap">
+              {order.quantity}
               </td>
-              <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                Thornton
+              <td class="text-sm text-gray-900 font-bold px-6 py-4 whitespace-nowrap">
+                {order.totalPrice}
               </td>
-              <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                @fat
+              <td class="text-sm text-gray-900 font-bold px-6 py-4 whitespace-nowrap">
+              {order.status ? <p className='text-green-500'>Shipped</p> : <p className='text-red-500'>Pending</p>}
               </td>
-            </tr>
-            <tr class="bg-white border-b">
-              <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">3</td>
-              <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                Larry
+              <td class="text-sm text-gray-900 font-bold px-6 py-4 whitespace-nowrap">
+              <button onClick={() =>handleCancelOrder(order._id)} class="btn btn-xs">Delete</button>
               </td>
-              <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                Wild
+              <td class="text-sm text-gray-900 font-bold px-6 py-4 whitespace-nowrap">
+              <button class="btn btn-xs">Pay Now</button>
               </td>
-              <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                @twitter
-              </td>
-            </tr>
+            </tr>)
+            }
           </tbody>
         </table>
       </div>

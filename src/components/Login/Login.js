@@ -47,7 +47,7 @@ const Login = () => {
     console.log(data);
     signInWithEmailAndPassword(data.email, data.password);
     signInWithGoogle();
-    navigate("/home");
+    navigate("/");
   };
   return (
     <div>
@@ -130,7 +130,7 @@ const Login = () => {
             </form>
             <p>
               New here?
-              <Link className="text-primary p-2" to="/signup">
+              <Link className="text-primary p-2" to="signup">
                 Create New Account
               </Link>
             </p>
