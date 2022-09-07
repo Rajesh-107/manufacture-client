@@ -4,6 +4,9 @@ import useBikeParts from "../../hooks/useBikeParts";
 const ManageProduct = () => {
   const [bikeParts, setbikeParts] = useBikeParts();
 
+
+  
+
   const handleDelete = (id) => {
     const proceed = window.confirm("Are you sure about that?");
     if (proceed) {
@@ -16,9 +19,10 @@ const ManageProduct = () => {
         .then((data) => {
           console.log(data);
           const remainingItem = bikeParts.filter(
-            (carPart) => carPart._id !== id
+            (bikePart) => bikePart._id !== id
           );
           setbikeParts(remainingItem);
+          
         });
     }
   };
@@ -44,8 +48,8 @@ const ManageProduct = () => {
                             <tbody>
                             
                            {
-                            bikeParts.map(bikePart =>  <tr>
-                                <th>1</th>
+                            bikeParts.map((bikePart,index) =>  <tr>
+                                <th>{index + 1}</th>
                                 <td>{bikePart.partName}</td>
                                 <td><img className="w-28 rounded-full" src={bikePart.img} alt=""/> </td>
                                 <td>{bikePart.price}</td>

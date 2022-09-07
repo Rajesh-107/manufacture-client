@@ -145,12 +145,14 @@ const MyOrders = ({ transactionId }) => {
                         )}
                       </td>
                       <td class="text-sm text-gray-900 font-bold px-6 py-4 whitespace-nowrap">
-                        <button
+                        {
+                          !order.paid && <button
                           onClick={() => handleCancelOrder(order._id)}
                           class="btn btn-xs"
                         >
                           Delete
                         </button>
+                        }
                       </td>
                       <td class="text-sm text-gray-900 font-bold px-6 py-4 whitespace-nowrap">
                         {order.price && !order.paid && (

@@ -7,6 +7,11 @@ const ManageAllOrder = () => {
     const [orders, setOrders] = useState([]);
     const [user] = useAuthState(auth);
     const [admin] = useAdmin(user);
+    const [currentPage, setCurrentPage] = useState(1);
+    const [postperpage, setPostperPage] = useState(8);
+
+
+   
 
 
    useEffect(() => {
@@ -25,8 +30,48 @@ const ManageAllOrder = () => {
         }
       }, [admin]);
 
+      const handleShipment = (id) => {
+
+        fetch(`http://localhost:5000/ordershipment/${id}`, {
+            method: 'PUT',
+            headers: {
+                'content-type': 'application/json',
+            },
+            body: JSON.stringify({ shipment: 'paid' }),
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);  
+            })
+    }
+  
+    const handleDelete = (id) => {
+        const proceed = window.confirm("Are you sure about that?");
+        if (proceed) {
+          const url = `http://localhost:5000/allorder/${id}`;
+    
+          fetch(url, {
+            method: "DELETE",
+          })
+            .then((res) => res.json())
+            .then((data) => {
+              console.log(data);
+              const remainingItem = orders.filter(
+                (order) => order._id !== id
+              );
+              setOrders(remainingItem);
+            });
+        }
+      };
+
+ 
+
+    const lastPost = currentPage * postperpage;
+    const firstPost = lastPost - postperpage;
+    const currentpost = orders.slice(firstPost, lastPost)
+
     return (
-        <div>
+        <div className='ma'>
             <h2>This is all order: {orders.length}</h2>
             <div class="flex flex-col">
   <div class="overflow-x-auto sm:-mx-6 lg:-mx-8">
@@ -90,9 +135,26 @@ const ManageAllOrder = () => {
             <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
               {order.address}
             </td>
+            <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+            {order.paid
+                    ?
+                    <div>
+                        {
+                            order.status === 'paid' ?
+                                <p className='font-bold'>Shipped</p>
+                                :
+                                <button onClick={() => handleShipment(order._id)} class="btn bg-green-600 btn-xs">Make Shipment</button>
+                        }
+                    </div>
+                    :
+                    <button onClick={() => handleDelete(order._id)}  class="btn btn-error btn-xs ml-3">Delete Order</button>
+                }
+
+                { }
+            </td>
            
-          </tr>)
-         }
+          </tr>
+          )}
           
           </tbody>
         </table>
@@ -100,7 +162,7 @@ const ManageAllOrder = () => {
     </div>
   </div>
 </div>
-        </div>
+</div>
     );
 };
 

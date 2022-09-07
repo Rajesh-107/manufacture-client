@@ -3,7 +3,8 @@ import { useForm } from 'react-hook-form';
 
 const AddProduct = (e) => {
     const { register, handleSubmit } = useForm();
-    const onSubmit = (data) => {
+
+    const onSubmit = ( data) => {
       const url = `http://localhost:5000/inventory`;
       fetch(url, {
         method: "POST",
@@ -18,6 +19,7 @@ const AddProduct = (e) => {
           e.target.reset()
         });
     };
+    
     return (
         <div class="hero  bg-base-200">
   <div class="hero-content flex-col lg:flex-row-reverse">

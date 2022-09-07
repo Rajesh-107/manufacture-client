@@ -5,11 +5,7 @@ import UserRow from "./UserRow";
 import userRow from "./UserRow";
 
 const Users = () => {
-  const {
-    data: users,
-    isLoading,
-    refetch,
-  } = useQuery("users", () =>
+  const { data: users, isLoading, refetch,} = useQuery("users", () =>
     fetch("http://localhost:5000/users", {
       method: "GET",
       headers: {

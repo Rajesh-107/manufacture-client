@@ -43,7 +43,7 @@ const Banner = () => {
               <div class="absolute top-0 right-0 bottom-0 left-0 w-full  overflow-hidden bg-fixed bg-black opacity-50"></div>
             </div>
             <div class="carousel-caption hidden md:block absolute text-center">
-              <h5 class="text-xl">First slide label</h5>
+              <h5 class="text-xl">Best Manufacture in the world</h5>
               <p>
                 Some representative placeholder content for the first slide.
               </p>
