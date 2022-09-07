@@ -17,6 +17,12 @@ import MyOrders from './components/DashBoard/MyOrders';
 import MyReview from './components/DashBoard/MyReview';
 import MyProfile from './components/DashBoard/MyProfile';
 import Users from './components/DashBoard/Users';
+import RequireAdmin from './components/Login/RequireAdmin';
+import Payment from './components/DashBoard/Payment';
+import AddProduct from './components/DashBoard/ManageAllOrder/AddProduct';
+import Blog from './components/Home/Blog';
+import ManageAllOrder from './components/DashBoard/ManageAllOrder/ManageAllOrder';
+import ManageProduct from './components/DashBoard/ManageAllOrder/ManageProduct';
 
 function App() {
   return (
@@ -25,6 +31,7 @@ function App() {
       <Routes>
         <Route path='/' element={<Home></Home>}></Route>
         <Route path='/about' element={<About></About>}></Route>
+        <Route path='/blog' element={<Blog></Blog>}></Route>
         <Route path='/login' element={<Login></Login>}></Route>
         <Route path='/signup' element={<SignUp></SignUp>}></Route>
         <Route path='/purchase/:id' element={<RequireAuth>
@@ -36,7 +43,17 @@ function App() {
           <Route index element={<MyProfile></MyProfile>}></Route>
           <Route path='myorder' element={<MyOrders></MyOrders>}></Route>
           <Route path='review' element={<MyReview></MyReview>}></Route>
-          <Route path='users' element={<Users></Users>}></Route>
+          <Route path='payment/:id' element={<Payment></Payment>}></Route>
+          <Route path='users' element={<RequireAdmin><Users></Users></RequireAdmin>}></Route>
+          <Route path='addproduct' element={<RequireAdmin><AddProduct></AddProduct></RequireAdmin>}></Route>
+          <Route path='manageorder' element={<RequireAdmin>
+            <ManageAllOrder></ManageAllOrder>
+            </RequireAdmin>}>
+            </Route>
+          <Route path='manageproduct' element={<RequireAdmin>
+            <ManageProduct></ManageProduct>
+            </RequireAdmin>}>
+            </Route>
         </Route>
         
         <Route path='*' element={<NotFound></NotFound>}></Route>

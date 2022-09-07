@@ -31,16 +31,7 @@ const Bikepart = ({ part }) => {
           </h1>
           <p className="leading-relaxed mb-3">{description}</p>
 
-          <p className="leading-relaxed mb-3">
-            Quantity:
-            {available > 0 ? (
-              ""
-            ) : (
-              <span class="indicator-item indicator-center indicator-middle badge badge-secondary">
-                Out of Stock
-              </span>
-            )}
-          </p>
+        
           <p>Available: {available > 0 ? available : "Out of Stock"}</p>
           <div className="flex justify-between flex-wrap">
             <p>Minimum Order: {minOrder || "N/A"}</p>
