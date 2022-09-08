@@ -1,6 +1,20 @@
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+#Live-Link-manufacture-app-eb0cb.web.app/
+
+adminId: hero@gmail.com
+
+pass: 123457
+
+This is my full stack projects, after all there is some mistake, but still trying to fix.
+
+This application made with
+
+FrontEnd: ReactJs, Tailwind
+Backend : Node js, ExpressJs, Firebase for authentication, Database: MongoDb
+there is payment method used , name Stripe
+JWT token used here
 
 ## Available Scripts
 
