@@ -24,16 +24,16 @@ const MyReview = (e) => {
       <div className="flex justify-center">
         <form onSubmit={handleSubmit(onSubmit)}>
               <input
-                class="input input-bordered input-primary w-full mt-8 max-w-xs"
+                className="input input-bordered input-primary w-full mt-8 max-w-xs"
                 placeholder="Name"
                 {...register("Name", )}
               />
               <textarea
-                class="input input-bordered textarea input-primary w-full mt-8 max-w-xs"
+                className="input input-bordered textarea input-primary w-full mt-8 max-w-xs"
                 {...register("description", )}
               />
               <input
-                class="input input-bordered input-primary w-full mt-8 max-w-xs"
+                className="input input-bordered input-primary w-full mt-8 max-w-xs"
                 placeholder="rating"
                 type="number"
                 {...register("rating", )}

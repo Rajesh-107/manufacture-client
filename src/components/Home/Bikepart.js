@@ -4,12 +4,10 @@ import { Link, useNavigate } from "react-router-dom";
 import auth from "../../firebase.init";
 import useDBUser from "../hooks/dbUser";
 
-
 const Bikepart = ({ part }) => {
   const [user] = useAuthState(auth);
- 
-  const { _id, partName, img, description, price, minOrder, available } = part;
 
+  const { _id, partName, img, description, price, minOrder, available } = part;
 
   return (
     <div className="p-4 md:w-1/3">
@@ -31,7 +29,6 @@ const Bikepart = ({ part }) => {
           </h1>
           <p className="leading-relaxed mb-3">{description}</p>
 
-        
           <p>Available: {available > 0 ? available : "Out of Stock"}</p>
           <div className="flex justify-between flex-wrap">
             <p>Minimum Order: {minOrder || "N/A"}</p>
@@ -57,13 +54,7 @@ const Bikepart = ({ part }) => {
               </div>
             ) : (
               <div className="inline-flex justify-end ml-5 items-center">
-                <Link
-                  to={`/inventory/${_id}`}
-                  style={{ background: "#32C6D9" }}
-                  className="text-indigo-500 inline-flex items-center md:mb-2 lg:mb-0"
-                >
-                  Update
-                </Link>
+               
               </div>
             )}
             <span className="btn text-white py-1 px-4 bg-red-600">

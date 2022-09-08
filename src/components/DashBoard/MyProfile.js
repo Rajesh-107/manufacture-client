@@ -43,10 +43,10 @@ const MyProfile = () => {
   };
 
   return (
-    <div class="card md:w-3/4 mx-auto mt-5 md:flex-row h-fit ">
+    <div className="card md:w-3/4 mx-auto mt-5 md:flex-row h-fit ">
       <div>
-        <figure class="px-10 pt-10">
-          <img src={dbUser.photo || userPhoto} alt="" class="rounded-full w-44" />
+        <figure className="px-10 pt-10">
+          <img src={dbUser.photo || userPhoto} alt="" className="rounded-full w-44" />
         </figure>
 
         <div className="text-left ml-8 text-lg mt-8">
@@ -61,67 +61,67 @@ const MyProfile = () => {
         </div>
       </div>
       <form className="w-full" onSubmit={handleProfileUpdate}>
-        <div class="card-body my-0 gap-y-0 items-center text-center">
-          <h2 class="card-title text-indigo-500 text-3xl mb-5 pb-2">Update Your Profile</h2>
+        <div className="card-body my-0 gap-y-0 items-center text-center">
+          <h2 className="card-title text-indigo-500 text-3xl mb-5 pb-2">Update Your Profile</h2>
           <div className="h-1 w-72 bg-indigo-500 rounded"></div>
       
-          <div class="form-control w-full max-w-xs">
-            <label class="label">
-              <span class="label-text">Education</span>
+          <div className="form-control w-full max-w-xs">
+            <label className="label">
+              <span className="label-text">Education</span>
             </label>
             <input
               type="text"
               name="education"
               placeholder={dbUser?.education || "Please Type education"}
-              class="input input-bordered w-full max-w-xs"
+              className="input input-bordered w-full max-w-xs"
             />
           </div>
-          <div class="form-control w-full max-w-xs">
-            <label class="label">
-              <span class="label-text">Your Address</span>
+          <div className="form-control w-full max-w-xs">
+            <label className="label">
+              <span className="label-text">Your Address</span>
             </label>
             <input
               type="text"
               name="address"
               placeholder={dbUser?.address || "Type address"}
-              class="input input-bordered w-full max-w-xs"
+              className="input input-bordered w-full max-w-xs"
             />
           </div>
-          <div class="form-control w-full max-w-xs">
-            <label class="label">
-              <span class="label-text">Contact Number</span>
+          <div className="form-control w-full max-w-xs">
+            <label className="label">
+              <span className="label-text">Contact Number</span>
             </label>
             <input
               type="text"
               name="contact"
               placeholder={dbUser?.contact || "Type contact number"}
-              class="input input-bordered w-full max-w-xs"
+              className="input input-bordered w-full max-w-xs"
             />
           </div>
-          <div class="form-control w-full max-w-xs">
-            <label class="label">
-              <span class="label-text">Linkedin Profile</span>
+          <div className="form-control w-full max-w-xs">
+            <label className="label">
+              <span className="label-text">Linkedin Profile</span>
             </label>
             <input
               type="text"
               name="linkedin"
               placeholder={dbUser?.linkedin || "Type Linked profile "}
-              class="input input-bordered w-full max-w-xs"
+              className="input input-bordered w-full max-w-xs"
             />
           </div>
-          <div class="form-control w-full max-w-xs">
-            <label class="label">
-              <span class="label-text">Profile Picture</span>
+          <div className="form-control w-full max-w-xs">
+            <label className="label">
+              <span className="label-text">Profile Picture</span>
             </label>
             <input
               type="text"
               name="photo"
               placeholder="Profile Picture link"
-              class="input input-bordered w-full max-w-xs"
+              className="input input-bordered w-full max-w-xs"
             />
           </div>
-          <div class="card-actions mt-5">
-            <button type="submit" class="btn btn-wide">
+          <div className="card-actions mt-5">
+            <button type="submit" className="btn btn-wide">
               Update
             </button>
           </div>

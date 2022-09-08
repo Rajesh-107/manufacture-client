@@ -63,28 +63,28 @@ const PartsDetail = () => {
       });
   };
   return (
-    <div class="hero min-h-screen">
+    <div className="hero min-h-screen">
       <form onSubmit={handlePlaceOrder}>
-        <div class="hero-content flex-col lg:flex-row-reverse">
-          <img src={inventory.img} class="max-w-sm rounded-lg shadow-2xl" />
+        <div className="hero-content flex-col lg:flex-row-reverse">
+          <img src={inventory.img} className="max-w-sm rounded-lg shadow-2xl" />
           <div>
-            <h1 class="text-2xl font-bold">
+            <h1 className="text-2xl font-bold">
               Product name:{inventory.partName}
             </h1>
-            <p class="py-6">{inventory.description}</p>
+            <p className="py-6">{inventory.description}</p>
             <p className="text-red-500 font-bold">Price: {inventory.price}</p>
             <p className="text-lg">Quantity: {inventory.available}</p>
-            <div class="form-control mb-4">
-              <label class="label">
-                <span class="label-text">Enter Quantity</span>
+            <div className="form-control mb-4">
+              <label className="label">
+                <span className="label-text">Enter Quantity</span>
               </label>
-              <label class="input-group">
+              <label className="input-group">
                 <span onClick={decreaseQuantity}>-</span>
                 <input
                   type="number"
                   name="quantity"
                   value={quantity}
-                  class="input input-bordered focus:outline-none"
+                  className="input input-bordered focus:outline-none"
                 />
                 <span onClick={increaseQuantity}>+</span>
               </label>
